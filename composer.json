@@ -1,0 +1,24 @@
+{
+    "name": "trackingmore/trackingmore-sdk-php",
+    "description": "The PHP SDK of TrackingMore API",
+    "type": "library",
+    "require": {
+        "php": ">=5.6"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~6.2"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "TrackingMore\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "TrackingMore",
+            "email": "manage@trackingmore.org"
+        }
+    ],
+    "minimum-stability": "dev"
+}
