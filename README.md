@@ -1,4 +1,4 @@
-Trackingmore-PHP
+Trackingmore API PHP SDK
 =================
 
 The PHP SDK of Trackingmore API
