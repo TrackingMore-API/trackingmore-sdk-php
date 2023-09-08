@@ -28,5 +28,5 @@ Thumbs.db
 composer.phar
 composer.lock
 
-#Ignore log files
+# Ignore log files
 *.log
