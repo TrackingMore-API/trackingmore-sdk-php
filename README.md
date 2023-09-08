@@ -139,9 +139,8 @@ https://api.trackingmore.com/v4/trackings/get
 ```php
 $trackings = new TrackingMore\Trackings('you api key');                                                  
 // Perform queries based on various conditions
-$params = ['tracking_number'=>'92612903029511573030094531'];
-$params = ['tracking_numbers'=>'92612903029511573030094532','courier_code'=>'usps'];
-$params = ['tracking_numbers'=>'92612903029511573030094531,9400111899562539126562','courier_code'=>'usps'];
+// $params = ['tracking_numbers'=>'92612903029511573030094532','courier_code'=>'usps'];
+// $params = ['tracking_numbers'=>'92612903029511573030094531,9400111899562539126562','courier_code'=>'usps'];
 $params = ['created_date_min'=>'2023-08-23T06:00:00+00:00','created_date_max'=>'2023-09-05T07:20:42+00:00'];
 $response = $trackings->getTrackingResults($params);
 ```
