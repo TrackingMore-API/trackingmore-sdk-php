@@ -36,6 +36,14 @@ class Trackings implements TrackingsInterface {
         if (count($params)>40) {
             throw new TrackingMoreException('Max. 40 tracking numbers create in one call');
         }
+        for($i=0;$i<count($params);$i++){
+              if(empty($params[$i]['tracking_number'])){
+                throw new TrackingMoreException('Tracking number cannot be empty');
+              }
+              if(empty($params[$i]['courier_code'])){
+                throw new TrackingMoreException('Courier Code cannot be empty');
+              }
+        }
         $this->apiPath = 'batch';
         $response = $this->sendApiRequest($params,'POST');
         return $response;

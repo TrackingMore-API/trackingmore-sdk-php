@@ -15,6 +15,9 @@ class AirWaybills implements AirWaybillsInterface {
         if (empty($params['awb_number'])) {
             throw new TrackingMoreException('Awb number cannot be empty');
         }
+        if(strlen($params['awb_number']) != 12){
+            throw new TrackingMoreException('The air waybill number format is invalid and can only be 12 digits in length');
+        }
         $this->apiPath = 'awb';
         $response = $this->sendApiRequest($params,'POST');
         return $response;

@@ -91,6 +91,20 @@ class TrackingsTest extends TestCase
     }
 
     /** @tests */
+    public function testBatchCreateTrackingWithMissingTrackingNumber()
+    {
+        $array = [['tracking_number'=>'','courier_code'=>'usps']];
+        $this->throwsError('batchCreateTrackings', [$array], 'Tracking number cannot be empty');
+    }
+
+    /** @tests */
+    public function testBatchCreateTrackingWithMissingCourierCode()
+    {
+        $array = [['tracking_number'=>'9261290302951157303009453','courier_code'=>'']];
+        $this->throwsError('batchCreateTrackings', [$array], 'Courier Code cannot be empty');
+    }
+
+    /** @tests */
     public function testUpdateTrackingByIDWithEmptyID()
     {
         $this->throwsError('updateTrackingByID', [''], 'Id cannot be empty');

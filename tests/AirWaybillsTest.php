@@ -41,6 +41,12 @@ class AirWaybillsTest extends TestCase
         $this->throwsError('createAnAirWayBill', [''], 'Awb number cannot be empty');
     }
 
+    /** @test */
+    public function testCreateAnAirWayBillWithInvalidAwbNumberFormat()
+    {
+        $this->throwsError('createAnAirWayBill', [['awb_number'=>'123456']], 'The air waybill number format is invalid and can only be 12 digits in length');
+    }
+
     private function throwsError($method, $args, $errorMessage)
     {
 
