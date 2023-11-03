@@ -3,6 +3,7 @@ namespace Tests;
 
 use PHPUnit\Framework\TestCase;
 use TrackingMore\Couriers;
+use TrackingMore\ErrorMessages;
 use TrackingMore\TrackingMoreException;
 use TrackingMore\Trackings;
 
@@ -24,7 +25,7 @@ class TrackingsTest extends TestCase
             new Trackings();
         } catch (TrackingMoreException $e) {
             $this->assertInstanceOf(TrackingMoreException::class, $e);
-            $this->assertEquals($e->getMessage(), 'API Key is missing');
+            $this->assertEquals($e->getMessage(), ErrorMessages::ErrEmptyAPIKey);
         }
     }
 
@@ -87,39 +88,39 @@ class TrackingsTest extends TestCase
         for($i=0;$i<41;$i++){
             $array[] = ['tracking_number'=>'9261290302951157303009453'.$i,'courier_code'=>'usps'];
         }
-        $this->throwsError('batchCreateTrackings', [$array], 'Max. 40 tracking numbers create in one call');
+        $this->throwsError('batchCreateTrackings', [$array], ErrorMessages::ErrMaxTrackingNumbersExceeded);
     }
 
     /** @tests */
     public function testBatchCreateTrackingWithMissingTrackingNumber()
     {
         $array = [['tracking_number'=>'','courier_code'=>'usps']];
-        $this->throwsError('batchCreateTrackings', [$array], 'Tracking number cannot be empty');
+        $this->throwsError('batchCreateTrackings', [$array], ErrorMessages::ErrMissingTrackingNumber);
     }
 
     /** @tests */
     public function testBatchCreateTrackingWithMissingCourierCode()
     {
         $array = [['tracking_number'=>'9261290302951157303009453','courier_code'=>'']];
-        $this->throwsError('batchCreateTrackings', [$array], 'Courier Code cannot be empty');
+        $this->throwsError('batchCreateTrackings', [$array], ErrorMessages::ErrMissingCourierCode);
     }
 
     /** @tests */
     public function testUpdateTrackingByIDWithEmptyID()
     {
-        $this->throwsError('updateTrackingByID', [''], 'Id cannot be empty');
+        $this->throwsError('updateTrackingByID', [''], ErrorMessages::ErrEmptyId);
     }
 
     /** @tests */
     public function testDeleteTrackingByIDWithEmptyID()
     {
-        $this->throwsError('deleteTrackingByID', [''], 'Id cannot be empty');
+        $this->throwsError('deleteTrackingByID', [''], ErrorMessages::ErrEmptyId);
     }
 
     /** @tests */
     public function testRetrackTrackingByIDWithEmptyID()
     {
-        $this->throwsError('retrackTrackingByID', [''], 'Id cannot be empty');
+        $this->throwsError('retrackTrackingByID', [''], ErrorMessages::ErrEmptyId);
     }
 
 
@@ -127,14 +128,14 @@ class TrackingsTest extends TestCase
     public function testCreateTrackingWithEmptyTrackingNumber()
     {
         $params = ['courier_code'=>'XYZ'];
-        $this->throwsError('createTracking', [$params], 'Tracking number cannot be empty');
+        $this->throwsError('createTracking', [$params], ErrorMessages::ErrMissingTrackingNumber);
     }
 
     /** @test */
     public function testCreateTrackingWithEmptyCourierCode()
     {
         $params = ['tracking_number'=>'123456'];
-        $this->throwsError('createTracking', [$params], 'Courier Code cannot be empty');
+        $this->throwsError('createTracking', [$params], ErrorMessages::ErrMissingCourierCode);
     }
 
     private function throwsError($method, $args, $errorMessage)

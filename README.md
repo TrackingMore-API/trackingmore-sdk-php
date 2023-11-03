@@ -61,6 +61,7 @@ print_r($response);
 <?php
 
 require(__DIR__ . '/trackingmore/trackingmore-sdk-php/src/TrackingMoreException.php');
+require(__DIR__ . '/trackingmore/trackingmore-sdk-php/src/ErrorMessages.php');
 require(__DIR__ . '/trackingmore/trackingmore-sdk-php/src/Request.php');
 require(__DIR__ . '/trackingmore/trackingmore-sdk-php/src/Interfaces/CouriersInterface.php');
 require(__DIR__ . '/trackingmore/trackingmore-sdk-php/src/Couriers.php');

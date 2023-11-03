@@ -13,10 +13,10 @@ class AirWaybills implements AirWaybillsInterface {
     public function createAnAirWayBill($params = [])
     {
         if (empty($params['awb_number'])) {
-            throw new TrackingMoreException('Awb number cannot be empty');
+            throw new TrackingMoreException(ErrorMessages::ErrMissingAwbNumber);
         }
-        if(strlen($params['awb_number']) != 12){
-            throw new TrackingMoreException('The air waybill number format is invalid and can only be 12 digits in length');
+        if(!preg_match('/^\d{3}[ -]?(\d{8})$/',$params['awb_number'])){
+            throw new TrackingMoreException(ErrorMessages::ErrInvalidAirWaybillFormat);
         }
         $this->apiPath = 'awb';
         $response = $this->sendApiRequest($params,'POST');

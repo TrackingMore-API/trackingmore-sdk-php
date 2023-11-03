@@ -61,7 +61,7 @@ trait Request
     public function __construct($apiKey = '')
     {
         if (empty($apiKey)) {
-            throw new TrackingMoreException('API Key is missing');
+            throw new TrackingMoreException(ErrorMessages::ErrEmptyAPIKey);
         }
         $this->setApiKey($apiKey);
     }
