@@ -31,7 +31,7 @@ class AirWaybillsTest extends TestCase
     /** @tests */
     public function testCreateAnAirWayBill()
     {
-        $airNumber = 'ABC123456789';
+        $airNumber = '235-69030430';
         $response = $this->airWaybills->createAnAirWayBill(['awb_number'=>$airNumber]);
         $this->assertInternalType('array',$response);
     }
