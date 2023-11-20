@@ -1,7 +1,7 @@
-Trackingmore API PHP SDK
+TrackingMore API PHP SDK
 =================
 
-The PHP SDK of Trackingmore API
+The PHP SDK of TrackingMore API
 
 Contact: <manage@trackingmore.org>
 
@@ -10,12 +10,12 @@ Contact: <manage@trackingmore.org>
 [Document](https://www.trackingmore.com/docs/trackingmore/d5ac362fc3cda-api-quick-start)
 
 ## Index
-1. [Installation](https://github.com/TrackingMores/trackingmore-sdk-php#installation)
-2. [Testing](https://github.com/TrackingMores/trackingmore-sdk-php#testing)
+1. [Installation](https://github.com/TrackingMore-API/trackingmore-sdk-php#installation)
+2. [Testing](https://github.com/TrackingMore-API/trackingmore-sdk-php#testing)
 3. SDK
-    1. [Couriers](https://github.com/TrackingMores/trackingmore-sdk-php#couriers)
-    2. [Trackings](https://github.com/TrackingMores/trackingmore-sdk-php#trackings)
-    3. [Air Waybill](https://github.com/TrackingMores/trackingmore-sdk-php#air-waybill)
+    1. [Couriers](https://github.com/TrackingMore-API/trackingmore-sdk-php#couriers)
+    2. [Trackings](https://github.com/TrackingMore-API/trackingmore-sdk-php#trackings)
+    3. [Air Waybill](https://github.com/TrackingMore-API/trackingmore-sdk-php#air-waybill)
 
 
 ## Installation
