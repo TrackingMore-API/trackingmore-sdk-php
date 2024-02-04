@@ -34,7 +34,7 @@ use TrackingMore\AirWaybills;
 use TrackingMore\Couriers;
 use TrackingMore\Trackings;
 
-$key = 'you api key';
+$key = 'your api key';
 
 $response = null;
 
@@ -70,7 +70,7 @@ require(__DIR__ . '/trackingmore/trackingmore-sdk-php/src/Trackings.php');
 require(__DIR__ . '/trackingmore/trackingmore-sdk-php/src/Interfaces/AirWaybillsInterface.php');
 require(__DIR__ . '/trackingmore/trackingmore-sdk-php/src/AirWaybills.php');
 
-$key = 'you api key';
+$key = 'your api key';
 
 $couriers = new TrackingMore\Couriers($key);
 $trackings = new TrackingMore\Trackings($key);
@@ -102,7 +102,7 @@ Simply add a try-catch block
 
 ```php
 try {
-  $couriers = new TrackingMore\Couriers('you api key');
+  $couriers = new TrackingMore\Couriers('your api key');
   $response = $couriers->getAllCouriers();
 }catch(\TrackingMoreException $e) {
     echo $e->getMessage();
@@ -114,14 +114,14 @@ try {
 ##### Return a list of all supported couriers.
 https://api.trackingmore.com/v4/couriers/all
 ```php
-$couriers = new TrackingMore\Couriers('you api key');
+$couriers = new TrackingMore\Couriers('your api key');
 $response = $couriers->getAllCouriers();
 ```
 
 ##### Return a list of matched couriers based on submitted tracking number.
 https://api.trackingmore.com/v4/couriers/detect
 ```php
-$couriers = new TrackingMore\Couriers('you api key');
+$couriers = new TrackingMore\Couriers('your api key');
 $params = ['tracking_number'=>'92612903029511573030094531'];
 $response = $couriers->detect($params);
 ```
@@ -130,7 +130,7 @@ $response = $couriers->detect($params);
 ##### Create a tracking.
 https://api.trackingmore.com/v4/trackings/create
 ```php
-$trackings = new TrackingMore\Trackings('you api key');
+$trackings = new TrackingMore\Trackings('your api key');
 $params = ['tracking_number'=>'9400111899562537624646','courier_code'=>'usps'];
 $response = $trackings->createTracking($params);
 ```
@@ -138,7 +138,7 @@ $response = $trackings->createTracking($params);
 ##### Get tracking results of multiple trackings.
 https://api.trackingmore.com/v4/trackings/get
 ```php
-$trackings = new TrackingMore\Trackings('you api key');
+$trackings = new TrackingMore\Trackings('your api key');
 $params = ['tracking_numbers'=>'92612903029511573030094532,9400111899562539126562','courier_code'=>'usps','created_date_min'=>'2023-08-23T06:00:00+00:00','created_date_max'=>'2023-09-05T07:20:42+00:00'];
 $response = $trackings->getTrackingResults($params);
 ```
@@ -146,7 +146,7 @@ $response = $trackings->getTrackingResults($params);
 ##### Create multiple trackings (Max. 40 tracking numbers create in one call).
 https://api.trackingmore.com/v4/trackings/batch
 ```php
-$trackings = new TrackingMore\Trackings('you api key');
+$trackings = new TrackingMore\Trackings('your api key');
 $params = [
     ['tracking_number'=>'92612903029511573030094531','courier_code'=>'usps'],
     ['tracking_number'=>'92612903029511573030094532','courier_code'=>'usps']
@@ -157,7 +157,7 @@ $response = $trackings->batchCreateTrackings($params);
 ##### Update a tracking by ID.
 https://api.trackingmore.com/v4/trackings/update/{id}
 ```php
-$trackings = new TrackingMore\Trackings('you api key');
+$trackings = new TrackingMore\Trackings('your api key');
 $params = ['customer_name'=>'New name','note'=>'New tests order note'];
 $idString = '9a035f5cdd0437c55d48e223c705a66c';
 $response = $trackings->updateTrackingByID($idString,$params);
@@ -166,7 +166,7 @@ $response = $trackings->updateTrackingByID($idString,$params);
 ##### Delete a tracking by ID.
 https://api.trackingmore.com/v4/trackings/delete/{id}
 ```php
-$trackings = new TrackingMore\Trackings('you api key');
+$trackings = new TrackingMore\Trackings('your api key');
 $idString = '99f8a21408be0b436705aa84d6f91806';
 $response = $trackings->deleteTrackingByID($idString);
 ```
@@ -174,7 +174,7 @@ $response = $trackings->deleteTrackingByID($idString);
 ##### Retrack expired tracking by ID.
 https://api.trackingmore.com/v4/trackings/retrack/{id}
 ```php
-$trackings = new TrackingMore\Trackings('you api key');
+$trackings = new TrackingMore\Trackings('your api key');
 $idString = '9a035f5cdd0437c55d48e223c705a66c';
 $response = $trackings->retrackTrackingByID($idString);
 ```
@@ -182,7 +182,7 @@ $response = $trackings->retrackTrackingByID($idString);
 ##### Create an air waybill.
 https://api.trackingmore.com/v4/awb
 ```php
-$airWaybill = new TrackingMore\AirWaybills('you api key');
+$airWaybill = new TrackingMore\AirWaybills('your api key');
 $params = ['awb_number'=>'235-69030430'];
 $response = $airWaybill->createAnAirWayBill($params);
 ```

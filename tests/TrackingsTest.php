@@ -16,7 +16,7 @@ class TrackingsTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->trackings = new Trackings('you api key');
+        $this->trackings = new Trackings('your api key');
     }
 
     /** @tests */

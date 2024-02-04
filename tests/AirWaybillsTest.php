@@ -15,7 +15,7 @@ class AirWaybillsTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->airWaybills = new AirWaybills('you api key');
+        $this->airWaybills = new AirWaybills('your api key');
     }
 
     /** @tests */

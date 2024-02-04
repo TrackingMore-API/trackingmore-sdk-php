@@ -15,7 +15,7 @@ class CouriersTest extends TestCase
     protected function setUp()
     {
         parent::setUp();
-        $this->couriers = new Couriers('you api key');
+        $this->couriers = new Couriers('your api key');
     }
 
     /** @tests */
