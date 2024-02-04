@@ -9,7 +9,7 @@ use TrackingMore\TrackingMoreException;
 class AirWaybillsTest extends TestCase
 {
 
-    /** @var AirWaybills */
+    /** @var AirWaybills  */
     private $airWaybills;
 
     protected function setUp()

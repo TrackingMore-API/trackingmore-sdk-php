@@ -10,7 +10,7 @@ use TrackingMore\Trackings;
 class TrackingsTest extends TestCase
 {
 
-    /** @var Couriers */
+    /** @var Couriers  */
     private $trackings;
 
     protected function setUp()

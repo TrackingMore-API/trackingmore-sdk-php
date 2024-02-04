@@ -9,7 +9,7 @@ use TrackingMore\TrackingMoreException;
 class CouriersTest extends TestCase
 {
 
-    /** @var Couriers */
+    /** @var Couriers  */
     private $couriers;
 
     protected function setUp()
